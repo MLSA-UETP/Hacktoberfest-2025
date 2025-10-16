@@ -1,0 +1,143 @@
+/* .project-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+.eachproject {
+  width: 100px;
+  background-color: #f9f9f9;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  text-align: center;
+  padding: 40px;
+  align-items: center;
+  box-shadow: 0px 0px 20px -1px rgba(0, 0, 0, 0.25);
+  border-radius: 25px;
+  animation: scale-up-center 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+}
+
+.eachproject:hover {
+  width: 390px;
+  transition: all 0.5s;
+}
+.eachproject h1 {
+  font-family: cursive;
+}
+.eachproject img {
+  width: 400px;
+  height: 200px;
+  border: 2px solid blue;
+}
+.heading {
+  text-align: center;
+  font-size: 40px;
+  border-bottom: 5px solid red;
+  padding-bottom: 10px;
+  margin: 0px 500px;
+  margin-top: 50px;
+}
+
+/* skill css*/
+/* .skills-container {
+  font-size: 24px;
+  margin: 100px;
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+  gap: 20px;
+  border-radius: 20px;
+} */
+/* 
+.skills-container h1 {
+  background-color: black;
+  color: white;
+  font-size: 20px;
+  padding: 10px 30px;
+  border-radius: 20px;
+/* } */
+/* .skills-container h1:hover {
+  background-color: white;
+  color: black;
+  border: 1px solid black;
+  transform: scale(0.9);
+  transition: all 0.5s;
+} */
+
+/* footer css*/
+
+/* all animation*/
+/* @keyframes slide-in-right {
+  0% {
+    -webkit-transform: translateX(1000px);
+    transform: translateX(1000px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    opacity: 1;
+  }
+} */
+/* 
+@keyframes slide-in-left {
+  0% {
+    -webkit-transform: translateX(-1000px);
+    transform: translateX(-1000px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    opacity: 1;
+  }
+} */
+
+/* @keyframes scale-up-center {
+  0% {
+    -webkit-transform: scale(0.5);
+    transform: scale(0.5);
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+} */
+
+/*css of html*/
+/* <!--  <h1 class="heading">project</h1>
+   <!-- project -->
+    <!-- <div class="project-container"> -->
+    <!--each project-->
+    <!-- <div class="eachproject">
+        <img width="100px" height="100px" src="" alt="project pic" />
+        <h1>recruuit</h1>
+        <p>
+          recruuit is a platform that connects job seekers with employers. It
+          offers a range of features to help users find their ideal job or
+          candidate.
+        </p>
+      </div> -->
+
+    <!--each project-->
+    <!-- <div class="eachproject">
+        <img src="" alt="project pic" />
+        <h1>recruuit</h1>
+        <p>
+          recruuit is a platform that connects job seekers with employers. It
+          offers a range of features to help users find their ideal job or
+          candidate.
+        </p>
+      </div> -->
+
+    <!--each project-->
+    <!-- <div class="eachproject">
+        <img src="" alt="project pic" />
+        <h1>recruuit</h1>
+        <p>
+          recruuit is a platform that connects job seekers with employers. It
+          offers a range of features to help users find their ideal job or
+          candidate.
+        </p>
+      </div>
+    </div> --> */

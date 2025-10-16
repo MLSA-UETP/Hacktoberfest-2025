@@ -1,0 +1,91 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+body {
+  background-image: url();
+}
+/*navbar div*/
+.navbar {
+  position: relative;
+  top: 0;
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 100px;
+  background-color: blueviolet;
+}
+.navbar a {
+  margin: 0 15px;
+  text-decoration: none;
+  color: #fff;
+}
+
+.link {
+  padding-left: 400px;
+  margin-left: 40px;
+}
+/*main div*/
+.main-contain {
+  background-image: url("https://tse1.mm.bing.net/th/id/OIP.dZ55mIlY2CMeILMmAjv1SgHaEK?pid=Api&P=0&h=220");
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 80px 20px;
+}
+.main-contain button {
+  padding: 10px 30px;
+  margin-top: 20px;
+  border: none;
+  background-color: orange;
+  border-radius: 5px;
+  color: #fff;
+  font-size: med;
+}
+.main-contain h1 {
+  font-size: 50px;
+  font-weight: bold;
+  color: #fff;
+}
+.main-contain p {
+  font-size: 18px;
+  margin-top: 15px;
+  margin-bottom: 20px;
+  color: #fff;
+}
+/*project div*/
+.whole-project-div {
+  display: flex;
+  gap: 50px;
+  justify-content: center;
+  margin-top: 15px;
+}
+.whole-project-div {
+  display: flex;
+  gap: 120px;
+  justify-content: center;
+  margin-top: 17px;
+}
+.project {
+  text-align: center;
+  border-radius: 15px;
+  background: #fff;
+  border: 1px solid #ccc;
+  padding: 30px 20px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  color: #333;
+  min-width: 220px;
+  max-width: 320px;
+}
+
+/*footer div*/
+footer {
+  background-color: #2a6db0;
+  color: white;
+  text-align: center;
+  padding: 17px;
+  margin-top: 35px;
+}
