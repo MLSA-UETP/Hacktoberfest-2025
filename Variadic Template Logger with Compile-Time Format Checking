@@ -1,0 +1,54 @@
+#include <iostream>
+#include <sstream>
+#include <string>
+#include <type_traits>
+
+// Simple type checker to allow only certain types
+template<typename T>
+struct is_loggable : std::disjunction<
+    std::is_integral<T>,
+    std::is_floating_point<T>,
+    std::is_same<T, std::string>,
+    std::is_same<T, const char*>
+> {};
+
+template<typename T>
+constexpr bool is_loggable_v = is_loggable<T>::value;
+
+// Base case for recursion
+void format_impl(std::ostringstream& oss, const std::string& format, size_t pos) {
+    oss << format.substr(pos);
+}
+
+// Recursive variadic template to replace '{}' with arguments
+template<typename T, typename... Args>
+void format_impl(std::ostringstream& oss, const std::string& format, size_t pos, T value, Args... args) {
+    static_assert(is_loggable_v<T>, "Type not supported for logging");
+
+    size_t brace_pos = format.find("{}", pos);
+    if (brace_pos == std::string::npos) {
+        throw std::runtime_error("Too many arguments provided to format string");
+    }
+
+    oss << format.substr(pos, brace_pos - pos);
+    oss << value;
+    format_impl(oss, format, brace_pos + 2, args...);
+}
+
+// Logger function with compile-time format safety (basic)
+template<typename... Args>
+std::string log(const std::string& format, Args... args) {
+    std::ostringstream oss;
+    format_impl(oss, format, 0, args...);
+    return oss.str();
+}
+
+int main() {
+    std::string message = log("Error code: {}, message: {}", 404, "Not Found");
+    std::cout << message << "\n";
+
+    // Uncommenting next line throws runtime error (too few braces)
+    // std::cout << log("Value: {}", 42, 24) << "\n";
+
+    return 0;
+}
