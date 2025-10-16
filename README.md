@@ -3,8 +3,8 @@ Official repository for Hacktoberfest 2025, organized by Microsoft Learn Student
 # 🎃 Hacktoberfest 2025 @ MLSA UET Peshawar
 
 Welcome to **Hacktoberfest 2025 @ UET Peshawar**, organized by the **Microsoft Learn Student Ambassadors – UET Peshawar**! 💙  
-This guide contains *everything you need* — from understanding open source to making your first Pull Request (PR).  
-No prior experience is needed — just enthusiasm, curiosity, and a laptop! 🚀  
+This guide contains *everything you need*, from understanding open source to making your first Pull Request (PR).  
+No prior experience is needed. All you need is enthusiasm, curiosity, and a laptop!🚀  
 
 ---
 
@@ -13,7 +13,7 @@ No prior experience is needed — just enthusiasm, curiosity, and a laptop! 🚀
 **Hacktoberfest** is a month-long global event held every **October**, encouraging people to contribute to **open-source projects** on GitHub.  
 It’s organized by **DigitalOcean**, **GitHub**, and developer communities around the world.  
 
-Whether you’re a student, beginner, or experienced coder — anyone can participate!  
+Whether you're a student, a beginner, or an experienced coder, everyone is welcome to participate!
 
 By contributing to open-source projects, you:
 - Learn real-world coding collaboration 🧑‍💻  
@@ -26,9 +26,9 @@ By contributing to open-source projects, you:
 ## 💡 What is Open Source?
 
 **Open Source** means projects whose code is freely available to use, modify, and improve by anyone.  
-It’s how the world’s biggest software — from Linux to VS Code — keeps evolving collaboratively.  
+It’s how the world’s biggest software, from Linux to VS Code keeps evolving collaboratively.  
 
-When you contribute, you don’t just write code — you **build impact**.
+When you contribute, you don’t just writing code. You **build impact**.
 
 ---
 
@@ -66,9 +66,10 @@ Now, download the forked repo to your computer.
 ```bash
 git clone https://github.com/<your-username>/Hacktoberfest-2025.git
 
-```
 
-### 🌿 Step 3: Create a New Branch
+---
+
+###🌿Step 3: Create a New Branch
 
 Creating a new branch keeps your work separate from the main code and prevents conflicts.
 
@@ -78,7 +79,7 @@ Run these commands one by one:
 cd Hacktoberfest-2025
 git checkout -b my-first-contribution
 
-```
+
 ---
 
 ### 🧠 Step 4: Make Your Contribution
@@ -96,7 +97,7 @@ Create a new file inside the `Python/` folder named `hello_world.py` and write:
 ```python
 print("Hello Hacktoberfest 2025 from UET Peshawar!")
 
-```
+
 ---
 
 
@@ -107,7 +108,7 @@ Once your changes are ready, tell Git to track and save them:
 ```bash
 git add .
 git commit -m "Added my first contribution"
-```
+
 ---
 
 ### ☁️ Step 6: Push Your Branch to GitHub
@@ -116,13 +117,13 @@ Now upload (push) your branch from your computer to your forked repository on Gi
 
 ```bash
 git push origin my-first-contribution
-```
+
 
 ---
 
 ### 🚀 Step 7: Open a Pull Request (PR)
 
-You’ve made your changes — now it’s time to merge them into the main repository! ✨  
+You’ve made your changes. Now it’s time to merge them into the main repository! ✨  
 
 1. Go to your **forked repository** on GitHub.  
 2. Click the **Compare & pull request** button that appears.  
@@ -137,7 +138,7 @@ You’ve made your changes — now it’s time to merge them into the main repos
 4. Click **Create pull request**.  
 
 🎉 **Congratulations!**  
-You just created your first Pull Request — welcome to the world of open source! 🌍  
+You just created your first Pull Request. Welcome to the world of open source! 🌍  
 
 Your PR will be reviewed by the maintainers (**MLSA UET Peshawar team**).  
 Once approved and merged, it will count toward your **Hacktoberfest 2025** progress. 🏅
