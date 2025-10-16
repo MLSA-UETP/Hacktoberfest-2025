@@ -1,0 +1,53 @@
+#include <iostream>
+#include <array>
+#include <type_traits>
+
+// Matrix size
+constexpr size_t N = 2;
+
+// Matrix class with compile-time size
+template<typename T, size_t Rows, size_t Cols>
+struct Matrix {
+    std::array<T, Rows * Cols> data;
+
+    constexpr T operator()(size_t r, size_t c) const {
+        return data[r * Cols + c];
+    }
+
+    constexpr T& operator()(size_t r, size_t c) {
+        return data[r * Cols + c];
+    }
+};
+
+// Compile-time matrix multiplication
+template<typename T, size_t R1, size_t C1, size_t C2>
+constexpr Matrix<T, R1, C2> multiply(const Matrix<T, R1, C1>& a, const Matrix<T, C1, C2>& b) {
+    Matrix<T, R1, C2> result{};
+
+    for (size_t i = 0; i < R1; ++i) {
+        for (size_t j = 0; j < C2; ++j) {
+            T sum = T{};
+            for (size_t k = 0; k < C1; ++k) {
+                sum += a(i, k) * b(k, j);
+            }
+            result(i, j) = sum;
+        }
+    }
+    return result;
+}
+
+int main() {
+    constexpr Matrix<int, 2, 2> A{ {1, 2, 3, 4} };
+    constexpr Matrix<int, 2, 2> B{ {5, 6, 7, 8} };
+
+    constexpr Matrix<int, 2, 2> C = multiply(A, B);
+
+    for (size_t i = 0; i < 2; ++i) {
+        for (size_t j = 0; j < 2; ++j) {
+            std::cout << C(i, j) << ' ';
+        }
+        std::cout << '\n';
+    }
+
+    return 0;
+}
