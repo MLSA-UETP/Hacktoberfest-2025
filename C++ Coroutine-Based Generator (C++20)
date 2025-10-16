@@ -1,0 +1,72 @@
+#include <coroutine>
+#include <iostream>
+#include <optional>
+
+template<typename T>
+struct Generator {
+    struct promise_type {
+        T current_value;
+        std::suspend_always yield_value(T value) {
+            current_value = value;
+            return {};
+        }
+        std::suspend_always initial_suspend() { return {}; }
+        std::suspend_always final_suspend() noexcept { return {}; }
+        Generator get_return_object() {
+            return Generator{ std::coroutine_handle<promise_type>::from_promise(*this) };
+        }
+        void return_void() {}
+        void unhandled_exception() { std::exit(1); }
+    };
+
+    using handle_type = std::coroutine_handle<promise_type>;
+    handle_type coro;
+
+    Generator(handle_type h) : coro(h) {}
+    ~Generator() { if (coro) coro.destroy(); }
+
+    Generator(const Generator&) = delete;
+    Generator& operator=(const Generator&) = delete;
+
+    Generator(Generator&& other) noexcept : coro(other.coro) {
+        other.coro = nullptr;
+    }
+    Generator& operator=(Generator&& other) noexcept {
+        if (this != &other) {
+            if (coro) coro.destroy();
+            coro = other.coro;
+            other.coro = nullptr;
+        }
+        return *this;
+    }
+
+    std::optional<T> next() {
+        if (!coro || coro.done()) return std::nullopt;
+        coro.resume();
+        if (coro.done()) return std::nullopt;
+        return coro.promise().current_value;
+    }
+};
+
+// Example coroutine generator that yields Fibonacci numbers
+Generator<int> fibonacci(int max_count) {
+    int a = 0, b = 1, count = 0;
+    while (count < max_count) {
+        co_yield a;
+        auto next = a + b;
+        a = b;
+        b = next;
+        ++count;
+    }
+}
+
+int main() {
+    auto fib = fibonacci(10);
+
+    while (auto val = fib.next()) {
+        std::cout << *val << " ";
+    }
+    std::cout << "\n";
+
+    return 0;
+}
