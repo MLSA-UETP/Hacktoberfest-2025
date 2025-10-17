@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>currency converter</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="converter-container">
+      <h1>currency converter</h1>
+      <p class="subtitle">
+        The most accurte source of data powered by
+        <span class="provider"> PLACEHOLDER</span>
+      </p>
+      <div class="currency-row">
+        <div class="currency-column column">
+          <label for="sourceCurrency">Form:</label>
+          <select id="sourceCurrency">
+            <option value="USD">USD</option>
+            <option value="PKR">PKR</option>
+            <option value="AUD">AUD</option>
+            <option value="JPY">JPY</option>
+            <option value="GBP">GBP</option>
+          </select>
+        </div>
+        <div class="currency-column column">
+          <label for="targetCurrency">To:</label>
+          <select id="targetCurrency">
+            <option value="USD">USD</option>
+            <option value="PKR">PKR</option>
+            <option value="AUD">AUD</option>
+            <option value="JPY">JPY</option>
+            <option value="GBP">GBP</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="amount-row">
+        <div class="amount-column column">
+          <label for="amount">Amount:</label>
+          <input type="number" id="amount" placeholder="Enter amount" />
+        </div>
+        <div class="converted-column column">
+          <label for="convertedAmount">Convered Amount:</label>
+          <input
+            type="text"
+            id="convertedAmount"
+            placeholder="Converted amount"
+          />
+        </div>
+      </div>
+      <button class="convert-button">Convert</button>
+    </div>
+  </body>
+</html>
